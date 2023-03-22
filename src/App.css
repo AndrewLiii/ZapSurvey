@@ -1,0 +1,78 @@
+.App body{
+  text-align: center;
+  justify-content: center;
+  
+} 
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  display: flex;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  height: 60px; 
+}
+
+.App-h1 {
+  font-size: 80%;
+  padding-left: 20px;
+}
+
+.dash-body{
+  text-align: center;
+  color: #282c34;
+}
+
+img {
+  padding-top: 5%;
+  height: 200px;
+  width: 200px;
+}
+
+button {
+  background-color: white;
+  border: none;
+  border-radius: 50px;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+
+.btn-smile {
+  margin-right: 50px;
+}
+
+.btn-sad {
+  margin-left: 50px;
+}
+
+button:hover {
+  background-color: rgb(179, 179, 179);
+}
+
+.survey-form{
+  font-size: larger;
+}
+
+.kendala-form {
+  text-align: left;
+  padding-left: 35rem;
+}
+
+label {
+  padding-left: 20px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 25px;
+}
+
+#kendala{
+  margin-top: 20px;
+  padding-right: 35px;
+  font-size: 17px;
+}
