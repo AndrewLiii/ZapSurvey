@@ -1,14 +1,60 @@
+import { saveForm } from '../app-db';
 import '../App.css';
 
 function Form() {
+  const handleForm = (e) => {
+    e.preventDefault();
+    //get querystring ?emotion value
+    const emotion = new URLSearchParams(window.location.search).get('emotion');
+    const mood = emotion === '1' ? 'neutral' : 'sad';
+    //get all value from inputs
+    const kendala = document.getElementById('kendala').value;
+    const nomorTelp = document.getElementById('nomor-telp').value;
+    //get all checkbox
+    const cb1 = document.getElementById('cb1').checked;
+    const cb2 = document.getElementById('cb2').checked;
+    const cb3 = document.getElementById('cb3').checked;
+    const cb4 = document.getElementById('cb4').checked;
+    const cb5 = document.getElementById('cb5').checked;
+    const cb6 = document.getElementById('cb6').checked;
+
+    //put value as key of checked on data, otherwise ignore
+    const data = {
+      kendala: [],
+      lainya: kendala,
+      nomorTelp: nomorTelp,
+      emote: mood,
+    }
+    if (cb1) {
+      data.kendala.push(document.getElementById('cb1').value);
+    }
+    if (cb2) {
+      data.kendala.push(document.getElementById('cb2').value);
+    }
+    if (cb3) {
+      data.kendala.push(document.getElementById('cb3').value);
+    }
+    if (cb4) {
+      data.kendala.push(document.getElementById('cb4').value);
+    }
+    if (cb5) {
+      data.kendala.push(document.getElementById('cb5').value);
+    }
+    if (cb6) {
+      data.kendala.push(document.getElementById('cb6').value);
+    }
+
+    saveForm(data)
+
+  }
   return (
     <div className="App">
       <header className="App-header">
         <h1 className="App-h1">Zap Survey</h1>
-      </header>
+      </header> 
       <body>
       <h2>Apa jenis kendala yang dialami?</h2>
-        <form className='survey-form'>
+        <form className='survey-form' onSubmit={handleForm}>
           <div className='kendala-form'>
           <input type="checkbox" id="cb1" name="cb1" value="Pegawai kurang sopan"></input>
           <label for="cb1">Pegawai kurang sopan</label> <br></br>

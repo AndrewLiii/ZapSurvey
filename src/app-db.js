@@ -1,7 +1,7 @@
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/database';
-
+import { getFirestore, collection, setDoc, doc, g   } from 'firebase/firestore/lite';
 const firebaseConfig = {
   apiKey: "AIzaSyC6vFootomhIZ1xF0mWscJMHMQZGRrl_yc",
   authDomain: "zapsurvey-d6dc5.firebaseapp.com",
@@ -12,6 +12,13 @@ const firebaseConfig = {
   measurementId: "G-YYMT5HFRGP"
 };
 
-firebase.initializeApp(firebaseConfig);
+const app = firebase.initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
-export default firebase;
+export const saveForm = async (data) => {
+    const dokumenBaru = doc(db, "zapsurvey", "Summary-" + new Date().toString());
+    const dataYangDikirim = data;
+    await setDoc(dokumenBaru, dataYangDikirim);
+}
+
+export default app;
