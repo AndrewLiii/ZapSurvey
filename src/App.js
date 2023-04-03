@@ -4,7 +4,24 @@ import { BrowserRouter as Router, Routes, Route}
 import Dashboard from './pages/dashboard';
 import Form from './pages/form'
 
+const hostURL = 'https://sheets.googleapis.com'
+
+export function GetSpreadsheet() {
+  fetch(hostURL + '/v4/spreadsheets/1S-xlfUClbfJzEbUC9evT6191E2VjxYCSoJ67F1nFO1A?key=AIzaSyBc7Ack1IVeI3tc9Ee8KOVxe9xG_RWNc10')
+}
+
+export function AppendSpreadsheet() {
+  fetch(hostURL + '/v4/spreadsheets/1S-xlfUClbfJzEbUC9evT6191E2VjxYCSoJ67F1nFO1A/values/A1:A1000:append?key=AIzaSyBc7Ack1IVeI3tc9Ee8KOVxe9xG_RWNc10',{
+    method: 'POST',
+    body: JSON.stringify({
+      values: ['test']
+    })
+  })
+}
+
 function App() {
+  // GetSpreadsheet();
+  AppendSpreadsheet()
   return (
     <div>
       <header>
