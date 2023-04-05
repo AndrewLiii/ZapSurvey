@@ -3,6 +3,7 @@ import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import firebase from '../app-db';
 import { saveForm } from "../app-db";
+import { AppendSpreadsheet } from "../App";
 // import firebase from 'firebase/compat/app';
 // import 'firebase/compat/auth';
 // import 'firebase/compat/firestore';
@@ -73,7 +74,7 @@ function Dashboard() {
             id="emotion"
             name="emotion"
             type="submit"
-            onClick={() => saveForm({ emote: "happy" })}
+            onClick={() => AppendSpreadsheet("Happy")}
           >
             <img
               className="img-smile"
@@ -87,7 +88,7 @@ function Dashboard() {
             name="emotion"
             type="submit"
             value="neutral"
-            to="/form?emotion=2"
+            to="/form?emotion=1"
           >
             <img
               className="img-neutral"
@@ -101,7 +102,7 @@ function Dashboard() {
             name="emotion"
             type="submit"
             value="sad"
-            to="/form?emotion=3"
+            to="/form?emotion=2"
           >
             <img
               className="img-sad"

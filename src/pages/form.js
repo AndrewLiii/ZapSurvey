@@ -1,4 +1,4 @@
-import { saveForm } from '../app-db';
+import { AppendSpreadsheet } from '../App';
 import '../App.css';
 
 function Form() {
@@ -6,9 +6,9 @@ function Form() {
     e.preventDefault();
     //get querystring ?emotion value
     const emotion = new URLSearchParams(window.location.search).get('emotion');
-    const mood = emotion === '1' ? 'neutral' : 'sad';
+    const mood = emotion === '1' ? "Neutral" : "Sad";
     //get all value from inputs
-    const kendala = document.getElementById('kendala').value;
+    const lainnya = document.getElementById('lainnya').value;
     const nomorTelp = document.getElementById('nomor-telp').value;
     //get all checkbox
     const cb1 = document.getElementById('cb1').checked;
@@ -21,7 +21,7 @@ function Form() {
     //put value as key of checked on data, otherwise ignore
     const data = {
       kendala: [],
-      lainya: kendala,
+      lainya: lainnya,
       nomorTelp: nomorTelp,
       emote: mood,
     }
@@ -44,7 +44,7 @@ function Form() {
       data.kendala.push(document.getElementById('cb6').value);
     }
 
-    saveForm(data)
+    AppendSpreadsheet(data.emote)
 
   }
   return (
@@ -68,7 +68,7 @@ function Form() {
           <label for="cb5">Baju hilang</label> <br></br>
           <input type="checkbox" id="cb6" name="cb6" value="Barang hilang"></input>
           <label for="cb6">Barang hilang</label> <br></br>
-          <input type="text" id="kendala" name="kendala" placeholder='Lainnya...'></input>
+          <input type="text" id="lainnya" name="lainnya" placeholder='Lainnya...'></input>
           </div>
           <br></br>
           <h2>Apakah anda ingin dikontak kami?
