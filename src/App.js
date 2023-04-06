@@ -11,8 +11,8 @@ export function GetSpreadsheet() {
   fetch(hostURL + '/v4/spreadsheets/1S-xlfUClbfJzEbUC9evT6191E2VjxYCSoJ67F1nFO1A?key=AIzaSyBc7Ack1IVeI3tc9Ee8KOVxe9xG_RWNc10&access_token=ya29.a0Ael9sCPGWOI-7PYFuY1QbzMZihCZzjE0nB6EMVHAqjBf6p2AwWZDoMQey_xvNPD1sNc9wunwgSYHtXs7woHcbi3d9lCiRNGYy5byvMilW2qYLW7AinI9AJzSvvnJxCpdlQW8ea9CbFPvJ0K1jIVG6EJZN8PVaCgYKAX4SARISFQF4udJhWSooPazf2dTOfICav0B6kg0163')
 }
 
-export function AppendSpreadsheet(emote, kendala, nomorTelp) {
-  let values = [[emote]]
+export function AppendSpreadsheet(emote, kendala1, kendala2, kendala3, kendala4, kendala5, kendala6, lainnya, nomorTelp) {
+  let values = [[emote, kendala1, kendala2, kendala3, kendala4, kendala5, kendala6, lainnya, nomorTelp]]
   fetch(hostURL + '/v4/spreadsheets/1S-xlfUClbfJzEbUC9evT6191E2VjxYCSoJ67F1nFO1A/values/A2:I1000:append?key=AIzaSyBc7Ack1IVeI3tc9Ee8KOVxe9xG_RWNc10&access_token='+ tokenURL +'&valueInputOption=USER_ENTERED',
   {
     method: 'POST',

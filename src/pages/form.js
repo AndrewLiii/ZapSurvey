@@ -20,32 +20,48 @@ function Form() {
 
     //put value as key of checked on data, otherwise ignore
     const data = {
-      kendala: [],
+      kendala1: "",
+      kendala2: "",
+      kendala3: "",
+      kendala4: "",
+      kendala5: "",
+      kendala6: "",
       lainya: lainnya,
       nomorTelp: nomorTelp,
       emote: mood,
     }
     if (cb1) {
-      data.kendala.push(document.getElementById('cb1').value);
+      data.kendala1 = "yes";
+    } else {
+      data.kendala1 = "no";
     }
     if (cb2) {
-      data.kendala.push(document.getElementById('cb2').value);
+      data.kendala2 = "yes";
+    } else {
+      data.kendala2 = "no";
     }
     if (cb3) {
-      data.kendala.push(document.getElementById('cb3').value);
+      data.kendala3 = "yes";
+    } else {
+      data.kendala3 = "no";
     }
     if (cb4) {
-      data.kendala.push(document.getElementById('cb4').value);
+      data.kendala4 = "yes";
+    } else {
+      data.kendala4 = "no";
     }
     if (cb5) {
-      data.kendala.push(document.getElementById('cb5').value);
+      data.kendala5 = "yes";
+    } else {
+      data.kendala5 = "no";
     }
     if (cb6) {
-      data.kendala.push(document.getElementById('cb6').value);
+      data.kendala6 = "yes";
+    } else {
+      data.kendala6 = "no";
     }
-
-    AppendSpreadsheet(data.emote)
-
+    console.log(lainnya)
+    AppendSpreadsheet(data.emote, data.kendala1,data.kendala2, data.kendala3, data.kendala4, data.kendala5, data.kendala6,data.lainnya, data.nomorTelp)
   }
   return (
     <div className="App">
