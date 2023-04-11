@@ -62,6 +62,7 @@ function Form() {
     }
     console.log(lainnya)
     AppendSpreadsheet(data.emote, data.kendala1,data.kendala2, data.kendala3, data.kendala4, data.kendala5, data.kendala6,data.lainnya, data.nomorTelp)
+
   }
   return (
     <div className="App">
