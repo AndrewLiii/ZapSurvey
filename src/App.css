@@ -18,7 +18,7 @@
 }
 
 .App-h1 {
-  font-size: 80%;
+  font-size: 20px;
   padding-left: 20px;
 }
 
@@ -57,10 +57,6 @@ button:hover {
   font-size: larger;
 }
 
-.kendala-form {
-  text-align: left;
-  padding-left: 35rem;
-}
 
 label {
   padding-left: 20px;
@@ -75,4 +71,8 @@ h2 {
   margin-top: 20px;
   padding-right: 35px;
   font-size: 17px;
+}
+
+.forms {
+  justify-content: center;
 }

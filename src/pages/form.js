@@ -26,7 +26,7 @@ function Form() {
       kendala4: "",
       kendala5: "",
       kendala6: "",
-      lainya: lainnya,
+      lainnya: lainnya,
       nomorTelp: nomorTelp,
       emote: mood,
     }
@@ -61,7 +61,7 @@ function Form() {
       data.kendala6 = "no";
     }
     console.log(lainnya)
-    AppendSpreadsheet(data.emote, data.kendala1,data.kendala2, data.kendala3, data.kendala4, data.kendala5, data.kendala6,data.lainnya, data.nomorTelp)
+    AppendSpreadsheet(data.emote, data.kendala1,data.kendala2, data.kendala3, data.kendala4, data.kendala5, data.kendala6,data.lainnya, data.nomorTelp, "Medit 2")
 
   }
   return (
@@ -69,7 +69,7 @@ function Form() {
       <header className="App-header">
         <h1 className="App-h1">Zap Survey</h1>
       </header> 
-      <body>
+      <body className='forms'>
       <h2>Apa jenis kendala yang dialami?</h2>
         <form className='survey-form' onSubmit={handleForm}>
           <div className='kendala-form'>
@@ -84,7 +84,8 @@ function Form() {
           <input type="checkbox" id="cb5" name="cb5" value="Baju hilang"></input>
           <label for="cb5">Baju hilang</label> <br></br>
           <input type="checkbox" id="cb6" name="cb6" value="Barang hilang"></input>
-          <label for="cb6">Barang hilang</label> <br></br>
+          <label for="cb6">Barang hilang</label> 
+          <br></br>
           <input type="text" id="lainnya" name="lainnya" placeholder='Lainnya...'></input>
           </div>
           <br></br>
