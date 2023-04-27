@@ -14,5 +14,4 @@ function Thankyou() {
     </div>
   );
 }
-//test
 export default Thankyou;
