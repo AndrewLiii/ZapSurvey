@@ -17,9 +17,7 @@ tokenProvider.getToken(function (err, token) {
         console.error(err);
     } else {
         tokenURL = token
-        console.log(tokenURL)
     }
-});
-console.log(tokenURL);
+});;
 
 export {tokenURL}

@@ -2,6 +2,14 @@ import { AppendSpreadsheet } from '../App';
 import '../App.css';
 
 function Form() {
+  const params = new Proxy(new URLSearchParams(window.location.search), {
+    get: (searchParams, prop) => searchParams.get(prop),
+  });
+
+  const outletQuery =  params.outlet;
+
+  const dateTime = Date()
+
   const handleForm = (e) => {
     e.preventDefault();
     //get querystring ?emotion value
@@ -60,8 +68,7 @@ function Form() {
     } else {
       data.kendala6 = "no";
     }
-    console.log(lainnya)
-    AppendSpreadsheet(data.emote, data.kendala1,data.kendala2, data.kendala3, data.kendala4, data.kendala5, data.kendala6,data.lainnya, data.nomorTelp, "Medit 2")
+    AppendSpreadsheet(data.emote, data.kendala1,data.kendala2, data.kendala3, data.kendala4, data.kendala5, data.kendala6,data.lainnya, data.nomorTelp, outletQuery, dateTime)
 
   }
   return (

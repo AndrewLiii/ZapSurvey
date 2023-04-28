@@ -6,6 +6,14 @@ import { saveForm } from "../app-db";
 import { AppendSpreadsheet } from "../App";
 
 function Dashboard() {
+  const params = new Proxy(new URLSearchParams(window.location.search), {
+    get: (searchParams, prop) => searchParams.get(prop),
+  });
+
+  const outletQuery =  params.outlet;
+
+  const dateTime = Date();
+
   return (
     <div className="App">
       <header className="App-header">
@@ -20,7 +28,7 @@ function Dashboard() {
             id="emotion"
             name="emotion"
             type="submit"
-            onClick={() => AppendSpreadsheet("Happy", "", "", "", "", "", "", "", "", "Medit 2")}
+            onClick={() => AppendSpreadsheet("Happy", "", "", "", "", "", "", "", "", outletQuery, dateTime)}
           >
             <img
               className="img-smile"
@@ -28,27 +36,13 @@ function Dashboard() {
               alt="smile"
             ></img>
           </button>
-          {/* <Link
-            className="btn-neutral"
-            id="emotion"
-            name="emotion"
-            type="submit"
-            value="neutral"
-            to="/form?emotion=1"
-          >
-            <img
-              className="img-neutral"
-              src={require("../Images/neutral-icon.png")}
-              alt="neutral"
-            ></img>
-          </Link> */}
           <Link
             className="btn-sad"
             id="emotion"
             name="emotion"
             type="submit"
             value="sad"
-            to="/form?emotion=2"
+            to={"/survey/form?emotion=2&outlet=" + outletQuery}
           >
             <img
               className="img-sad"

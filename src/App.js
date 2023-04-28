@@ -12,18 +12,22 @@ export function GetSpreadsheet() {
   fetch(hostURL + '/v4/spreadsheets/1S-xlfUClbfJzEbUC9evT6191E2VjxYCSoJ67F1nFO1A?key=AIzaSyBc7Ack1IVeI3tc9Ee8KOVxe9xG_RWNc10&access_token=ya29.a0Ael9sCPGWOI-7PYFuY1QbzMZihCZzjE0nB6EMVHAqjBf6p2AwWZDoMQey_xvNPD1sNc9wunwgSYHtXs7woHcbi3d9lCiRNGYy5byvMilW2qYLW7AinI9AJzSvvnJxCpdlQW8ea9CbFPvJ0K1jIVG6EJZN8PVaCgYKAX4SARISFQF4udJhWSooPazf2dTOfICav0B6kg0163')
 }
 
-export function AppendSpreadsheet(emote, kendala1, kendala2, kendala3, kendala4, kendala5, kendala6, lainnya, nomorTelp, outlet) {
-  let values = [[emote, kendala1, kendala2, kendala3, kendala4, kendala5, kendala6, lainnya, nomorTelp, outlet]]
-  fetch(hostURL + '/v4/spreadsheets/1S-xlfUClbfJzEbUC9evT6191E2VjxYCSoJ67F1nFO1A/values/A2:J1000:append?key=AIzaSyBc7Ack1IVeI3tc9Ee8KOVxe9xG_RWNc10&access_token='+ tokenURL +'&valueInputOption=USER_ENTERED',
+export function AppendSpreadsheet(emote, kendala1, kendala2, kendala3, kendala4, kendala5, kendala6, lainnya, nomorTelp, outlet, dateTime) {
+  let values = [[emote, kendala1, kendala2, kendala3, kendala4, kendala5, kendala6, lainnya, nomorTelp, outlet, dateTime]]
+  fetch(hostURL + '/v4/spreadsheets/1S-xlfUClbfJzEbUC9evT6191E2VjxYCSoJ67F1nFO1A/values/A2:K1000:append?key=AIzaSyBc7Ack1IVeI3tc9Ee8KOVxe9xG_RWNc10&access_token='+ tokenURL +'&valueInputOption=USER_ENTERED',
   {
     method: 'POST',
     body: JSON.stringify({
       values: values,
-      range: "A2:J1000",
+      range: "A2:K1000",
       majorDimension: "DIMENSION_UNSPECIFIED"
     })
   })
-  window.location.replace("/thankyou")
+  window.location.replace("https://zaplaundry.com/survey/thankyou?outlet=" + outlet)
+}
+
+export function LocationOutlet() {
+
 }
 
 function App() {
@@ -32,9 +36,9 @@ function App() {
       <header>
         <Router>
           <Routes>
-          <Route exact path='/' element={<Dashboard />} />
-          <Route exact path='/form' element={<Form />} />
-          <Route exact path='/thankyou' element={<Thankyou />} />
+          <Route exact path='/survey' element={<Dashboard />} />
+          <Route exact path='/survey/form' element={<Form />} />
+          <Route exact path='/survey/thankyou' element={<Thankyou />} />
           </Routes>
         </Router>
       </header>
@@ -45,33 +49,3 @@ function App() {
 }
 export default App;
 
-// import './App.css';
-// var user;
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <h1 className="App-h1">Zap Survey</h1>
-//       </header>
-//       <body>
-//         <h1>Bagaimana pengalaman anda di Zap Laundry?</h1>
-//         <br></br>
-//         <div className='App-emote'>
-//           <button className='btn-smile' onClick={choose("smile")}><img className="img-smile" src={require('./Images/smiley-icon.png')} alt='smile'></img></button>
-//           <button className='btn-neutral' onClick={choose("neutral")}><img className="img-neutral" src={require('./Images/neutral-icon.png')} alt='neutral'></img></button>
-//           <button className='btn-sad' onClick={choose("sad")}><img className="img-sad" src={require('./Images/sad-icon.png')} alt='sad'></img></button>
-//         </div>
-//       </body>
-//     </div>
-//   );
-// }
-
-// function choose(choice){
-//   user = choice;
-//   console.log(user)
-//   return user;
-// }
-
-// export default App;
-// export {choose};
