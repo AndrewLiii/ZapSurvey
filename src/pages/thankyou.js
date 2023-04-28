@@ -10,7 +10,7 @@ function Thankyou() {
 
   return (
     <div className="App">
-        <head><meta http-equiv="refresh" content={"3;url=https://zaplaundry.com/survey?outlet=" + outletQuery} /></head>
+        <head><meta http-equiv="refresh" content={"3;url=https://zaplaundry.com/survey/?outlet=" + outletQuery} /></head>
       <header className="App-header">
         <h1 className="App-h1">Zap Survey</h1>
       </header>
