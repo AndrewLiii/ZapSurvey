@@ -1,7 +1,7 @@
 {
   "name": "zapapp",
   "version": "0.1.0",
-  "homepage": "https://zaplaundry.com/survey/",
+  "homepage": "http://localhost:3000/survey/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
