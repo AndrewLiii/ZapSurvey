@@ -23,19 +23,28 @@ function Dashboard() {
         <h1>Bagaimana pengalaman anda di Zap Laundry?</h1>
         <br></br>
         <div className="App-emote">
-          <button
-            className="btn-smile"
-            id="emotion"
-            name="emotion"
-            type="submit"
-            onClick={() => AppendSpreadsheet("Happy", "", "", "", "", "", "", "", "", outletQuery, dateTime)}
+          <Link
+          to={"/survey/thankyou?outlet=" + outletQuery}
+          className="btn-smile"
+          id="emotion"
+          name="emotion"
+          type="submit"
+          onClick={() => AppendSpreadsheet("Happy", "", "", "", "", "", "", "", "", outletQuery, dateTime)}
           >
+          {/* <button
+            // className="btn-smile"
+            // id="emotion"
+            // name="emotion"
+            // type="submit"
+            // onClick={() => AppendSpreadsheet("Happy", "", "", "", "", "", "", "", "", outletQuery, dateTime)}
+          > */}
             <img
               className="img-smile"
               src={require('./smiley-icon.png').default}
               alt="smile"
             ></img>
-          </button>
+          {/* </button> */}
+          </Link>
           <Link
             className="btn-sad"
             id="emotion"

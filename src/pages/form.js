@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import { AppendSpreadsheet } from '../App';
 import '../App.css';
 
@@ -7,8 +9,9 @@ function Form() {
   });
 
   const outletQuery =  params.outlet;
-
+  const link = '/survey/thankyou?outlet=' + outletQuery
   const dateTime = Date()
+  const navigate = useNavigate();
 
   const handleForm = (e) => {
     e.preventDefault();
@@ -69,7 +72,7 @@ function Form() {
       data.kendala6 = "no";
     }
     AppendSpreadsheet(data.emote, data.kendala1,data.kendala2, data.kendala3, data.kendala4, data.kendala5, data.kendala6,data.lainnya, data.nomorTelp, outletQuery, dateTime)
-
+    navigate(link)
   }
   return (
     <div className="App">
@@ -78,7 +81,7 @@ function Form() {
       </header> 
       <body className='forms'>
       <h2>Apa jenis kendala yang dialami?</h2>
-        <form className='survey-form' onSubmit={handleForm}>
+        <form className='survey-form' onSubmit={handleForm} action={link} method="post">
           <div className='kendala-form'>
           <input type="checkbox" id="cb1" name="cb1" value="Pegawai kurang sopan"></input>
           <label for="cb1">Pegawai kurang sopan</label> <br></br>
@@ -94,17 +97,18 @@ function Form() {
           <label for="cb6">Barang hilang</label> 
           <br></br>
           <input type="text" id="lainnya" name="lainnya" placeholder='Lainnya...'></input>
-          </div>
+          </div>  
           <br></br>
           <h2>Apakah anda ingin dikontak kami?
             <br></br> Jika iya, mohon isi no. telp anda dibawah ini</h2>
-          <input type="number" id="nomor-telp" name="nomor-telp" placeholder='08xxxxxxxxx'></input>
+          <input type="number" id="nomor-telp" name="nomor-telp" placeholder='08123456789'></input>
           <br></br>
-          <input type="submit"></input>
+          <button type="submit">Submit</button>
         </form>
       </body>
     </div>
   );
+
 }
 
 export default Form;

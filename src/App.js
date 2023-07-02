@@ -24,7 +24,6 @@ export function AppendSpreadsheet(emote, kendala1, kendala2, kendala3, kendala4,
       majorDimension: "DIMENSION_UNSPECIFIED"
     })
   })
-  window.location.replace("https://zaplaundry.com/survey/thankyou?outlet=" + outlet)
 }
 
 function App() {
@@ -35,7 +34,7 @@ function App() {
           <Routes>
           <Route exact path='/survey' element={<Dashboard />} />
           <Route exact path='/survey/form' element={<Form />} />
-          <Route path='https://zaplaundry.com/survey/thankyou' element={<Thankyou />} />
+          <Route path='/survey/thankyou' element={<Thankyou />} />
           </Routes>
         </Router>
       </header>

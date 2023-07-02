@@ -33,18 +33,20 @@ img {
 }
 
 button {
-  background-color: white;
-  border: none;
   border-radius: 50px;
   transition-duration: 0.3s;
   cursor: pointer;
 }
 
 .btn-smile {
+  background-color: white;
+  border: none;
   margin-right: 50px;
 }
 
 .btn-sad {
+  background-color: white;
+  border: none;
   margin-left: 50px;
 }
 
