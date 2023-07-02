@@ -31,19 +31,11 @@ function Dashboard() {
           type="submit"
           onClick={() => AppendSpreadsheet("Happy", "", "", "", "", "", "", "", "", outletQuery, dateTime)}
           >
-          {/* <button
-            // className="btn-smile"
-            // id="emotion"
-            // name="emotion"
-            // type="submit"
-            // onClick={() => AppendSpreadsheet("Happy", "", "", "", "", "", "", "", "", outletQuery, dateTime)}
-          > */}
             <img
               className="img-smile"
               src={require('./smiley-icon.png').default}
               alt="smile"
             ></img>
-          {/* </button> */}
           </Link>
           <Link
             className="btn-sad"
