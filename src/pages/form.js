@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+
 import { useNavigate } from 'react-router';
 import { AppendSpreadsheet } from '../App';
 import '../App.css';
@@ -24,7 +24,8 @@ function Form() {
     //get all checkbox
 
     const checkboxes = document.querySelectorAll(".cb")
-    console.log(checkboxes)
+    const selected = Array.from(checkboxes).map(x => x.value)
+    console.log(selected)
 
     const cb1 = document.getElementById('cb1').checked;
     const cb2 = document.getElementById('cb2').checked;

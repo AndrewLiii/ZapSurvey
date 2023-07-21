@@ -1,8 +1,5 @@
 import "../App.css";
-import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import firebase from '../app-db';
-import { saveForm } from "../app-db";
 import { AppendSpreadsheet } from "../App";
 
 function Dashboard() {

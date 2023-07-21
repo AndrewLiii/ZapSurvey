@@ -1,5 +1,4 @@
 import "../App.css";
-import React, { useRef, useState } from "react";
 
 function Thankyou() {
   const params = new Proxy(new URLSearchParams(window.location.search), {

@@ -5,7 +5,6 @@ import Dashboard from './pages/dashboard';
 import Form from './pages/form'
 import Thankyou from './pages/thankyou'
 import {tokenURL} from './backend'
-import { Component } from 'react';
 
 const hostURL = 'https://sheets.googleapis.com'
 const id = '1S-xlfUClbfJzEbUC9evT6191E2VjxYCSoJ67F1nFO1A'
