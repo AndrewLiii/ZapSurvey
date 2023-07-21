@@ -23,9 +23,9 @@ function Form() {
     const nomorTelp = document.getElementById('nomor-telp').value;
     //get all checkbox
 
-    const checkboxes = document.querySelectorAll(".cb")
-    const selected = Array.from(checkboxes).map(x => x.value)
-    console.log(selected)
+    // const checkboxes = document.querySelectorAll(".cb")
+    // const selected = Array.from(checkboxes).map(x => x.value)
+    // console.log(selected)
 
     const cb1 = document.getElementById('cb1').checked;
     const cb2 = document.getElementById('cb2').checked;

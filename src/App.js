@@ -18,6 +18,8 @@ export function GetSpreadsheet() {
 export function AppendSpreadsheet(emote, kendala1, kendala2, kendala3, kendala4, kendala5, kendala6, lainnya, nomorTelp, outlet, dateTime) {
   let values = [[emote, kendala1, kendala2, kendala3, kendala4, kendala5, kendala6, lainnya, nomorTelp, outlet, dateTime]]
   let ranges = outlet + "!A2:K1000"
+  let outlets = ["medit1", "medit2"]
+
   try{
   fetch(hostURL + '/v4/spreadsheets/' + id + '/values/'+ outlet +'!A2:K1000:append?key=' + key + '&access_token='+ tokenURL +'&valueInputOption=USER_ENTERED',
   {
@@ -29,9 +31,23 @@ export function AppendSpreadsheet(emote, kendala1, kendala2, kendala3, kendala4,
     })
   })
   }
+
   catch(e){
     alert(e)
   }
+  window.onerror = function(msg, url, linenumber) {
+    alert('Error message: '+msg+'\nURL: '+url+'\nLine Number: '+linenumber);
+    return true;
+  }
+
+  if(outlets.includes(outlet)){
+    console.log("outlet found")
+  }
+  else{
+    alert("Outlet not found!")
+  }
+
+
 }
 
 function App() {
